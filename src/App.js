@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import CustomPointer from "./components/CustomPointer";
+import React, { createContext, useState } from "react";
+import StaticComponents from "./components/StaticComponents";
+import Home from "./components/Home";
+import "./styles/App.css";
 
 function App() {
+  const [theme, setTheme] = useState("dark");
+  const [customCursor, setCursor] = useState(true);
+
+  function handleTheme() {
+    setTheme(theme === "dark" ? "light" : "dark");
+  }
+  function handlePointer() {
+    setCursor(customCursor === false ? true : false);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div id={theme} className={"pointer-" + customCursor}>
+        <div className="background-div">
+          {customCursor && <CustomPointer />}
+          <Home />
+          <StaticComponents
+            customCursor={customCursor}
+            theme={theme}
+            handleTheme={handleTheme}
+            handlePointer={handlePointer}
+          />
+        </div>
+      </div>
+    </>
   );
 }
 
