@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 function CustomPointer() {
   const cursorRef = useRef(null);
@@ -15,12 +15,13 @@ function CustomPointer() {
     );
 
     function moveCursor(e) {
-      const { pageX: x, pageY: y } = e;
+      const { clientX: x, clientY: y } = e;
       cursorRef.current.style.left = x - 8 + "px";
       cursorRef.current.style.top = y - 8 + "px";
       cursorRef.current.style.opacity = 1;
       cursorRef.current.style.boxShadow = "0 0 10px 4px #00d5ff";
     }
+
     function isHoverTrue() {
       cursorRef.current.style.boxShadow = "0 0 10px 10px #00d5ff";
       cursorRef.current.style.opacity = "0.2";

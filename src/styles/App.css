@@ -73,7 +73,7 @@
   --social-logo-color: 20%;
   --theme: gold;
   --theme-bg: gold;
-  --pointer-color: rgb(0, 0, 0);
+  --pointer-color: #1d1f2b;
 }
 .pointer-true {
   cursor: none;
@@ -85,10 +85,10 @@
 .cursor {
   cursor: var(--pointer);
 }
+
 body {
   font-family: Visby Round CF;
   font-weight: 600;
-  overflow: hidden;
   padding: 0;
   margin: 0;
 }
@@ -98,25 +98,44 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: -90;
+  overflow: auto;
   background-color: var(--body-background-color);
   transition: background-color 1s ease-out;
 }
 .pointer {
-  position: absolute;
+  position: fixed;
   height: 2vh;
   width: 2vh;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--pointer-color);
   border-radius: 50%;
-  box-shadow: 0 0 10px 4px #ffffff;
+  box-shadow: 0 0 0.7rem 0.25rem var(--box-shadow);
   opacity: 0;
   transform: scale(100%);
   transition: opacity ease-in-out 0.3s, transform ease-in 0.3s,
     box-shadow ease-in-out 1s;
   z-index: 99;
   pointer-events: none;
+}
+
+.left-offset {
+  margin-left: clamp(9rem, 12vw, 16rem);
+}
+
+/* Scroll Bar Styles */
+
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+::-webkit-scrollbar-track {
+  margin-block: 2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--navbar-background-color);
+  border-radius: 2rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-color);
 }
 
 /* Nav Bar  Component */
@@ -127,7 +146,7 @@ body {
   top: 0;
   bottom: 0;
   background-color: var(--navbar-background-color);
-  width: clamp(5rem, 9vw, 13rem);
+  width: clamp(7rem, 9vmax, 13rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -135,18 +154,15 @@ body {
   border-right: 2px solid var(--navbar-border-color);
   transition: background-color 1s ease-out;
 }
-.my-image {
-  margin-bottom: 10%;
-  margin-top: -90%;
-}
+
 #image-active {
   filter: grayscale(0);
   transform: scale(110%);
-  box-shadow: 0 0 10px var(--box-shadow);
+  box-shadow: 0 0 0.7rem var(--box-shadow);
 }
 .my-image img {
-  width: clamp(3.8rem, 6.5vw, 8rem);
-  height: clamp(3.8rem, 6.5vw, 8rem);
+  width: clamp(4.5rem, 6.5vmax, 8rem);
+  height: clamp(4.5rem, 6.5vmax, 8rem);
   border-radius: 50%;
   object-fit: cover;
   object-position: 50% 30%;
@@ -154,44 +170,44 @@ body {
   transition: all 0.5s ease-in-out;
 }
 .my-image img:hover {
-  box-shadow: 0 0 10px var(--box-shadow);
+  box-shadow: 0 0 0.7rem var(--box-shadow);
   filter: grayscale(50%);
 }
-.nav-item {
-  margin-bottom: 3vh;
-  margin-top: 3vh;
+.nav-item,
+.socials,
+.my-image {
+  margin-bottom: clamp(1rem, 3vh, 3rem);
+  margin-top: clamp(1rem, 3vh, 3rem);
 }
-.nav-item-text {
+.text-item {
   color: var(--text-color);
-  font-size: clamp(1rem, 1.6vw, 4rem);
+  font-size: clamp(1rem, 1.6vmax, 4rem);
   text-decoration: none;
   transition: color 0.5s ease-in-out;
   cursor: var(--pointer);
+  white-space: nowrap;
 }
-.nav-item-text:hover,
-.nav-item-text:focus {
+.text-item:hover,
+.text-item:focus {
   color: var(--text-color-active);
 }
-.nav-text-line {
+.text-underline {
   margin-top: 0.6vh;
   width: 20%;
   border-bottom: 1px solid var(--text-color);
   transition: width 0.7s ease-in-out;
 }
-.nav-item-text:hover ~ .nav-text-line {
+.text-item:hover ~ .text-underline {
   width: 100%;
   border-color: var(--text-color-active);
 }
-.nav-item-text:focus ~ .nav-text-line {
+.text-item:focus ~ .text-underline {
   width: 100%;
   border-color: var(--text-color-active);
 }
-.socials {
-  margin-top: 25%;
-  margin-bottom: -40%;
-}
+
 .socials img {
-  height: clamp(1rem, 3vmin, 3rem);
+  height: clamp(1rem, 2vmax, 3rem);
   margin: 1vh;
   transition: transform 0.3s ease-in-out, filter 1s ease-in-out;
   filter: brightness(var(--social-logo-color));
@@ -204,10 +220,10 @@ body {
 
 .controls {
   position: fixed;
-  width: clamp(180px, 15vw, 280px);
-  height: clamp(2rem, 6vh, 5rem);
-  top: clamp(2rem, 11vh, 7rem);
-  right: clamp(6rem, 3vw, 7rem);
+  width: clamp(13rem, 15vw, 17rem);
+  height: clamp(3rem, 6vmin, 5rem);
+  top: clamp(1rem, 8vmax, 5rem);
+  right: clamp(2rem, 3vw, 7rem);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -221,12 +237,12 @@ body {
 .wave-1,
 .wave-2 {
   position: fixed;
-  width: clamp(180px, 15vw, 280px);
-  height: clamp(2rem, 6vh, 5rem);
-  top: clamp(2rem, 11vh, 7rem);
-  right: clamp(6rem, 3vw, 7rem);
+  width: clamp(13rem, 15vw, 17rem);
+  height: clamp(3rem, 6vmin, 5rem);
+  top: clamp(1rem, 8vmax, 5rem);
+  right: clamp(2rem, 3vw, 7rem);
   border: none;
-  border-radius: clamp(30px, 5vh, 70px);
+  border-radius: clamp(2rem, 5vmax, 5rem);
   box-shadow: 0 0 2px var(--box-shadow), 0 0 2px var(--box-shadow);
 }
 .wave-1 {
@@ -254,19 +270,19 @@ body {
   width: clamp(1rem, 3vh, 3rem);
   border-radius: 50%;
   background-color: var(--pointer-color);
-  box-shadow: 0 0 10px var(--box-shadow);
+  box-shadow: 0 0 0.7rem var(--box-shadow);
 }
 .theme-toggle {
   height: clamp(1rem, 3vh, 3rem);
   width: clamp(1rem, 3vh, 3rem);
   border-radius: 50%;
   background-color: var(--theme-bg);
-  box-shadow: inset 8px -6px 1px 1px var(--theme);
+  box-shadow: inset 0.5rem -0.4rem 1px 1px var(--theme);
   transition: all 0.3s ease-in-out;
 }
 
 .theme-toggle[theme="light"] {
-  box-shadow: inset 0 0 10px 20px var(--theme);
+  box-shadow: inset 0 0 0.7rem 1.3rem var(--theme);
 }
 .music-icons {
   display: flex;
@@ -274,12 +290,12 @@ body {
   align-items: flex-end;
 }
 .bar {
-  max-width: 8px;
-  width: 4px;
+  max-width: 0.5rem;
+  width: 0.25rem;
   background: var(--box-shadow);
   height: clamp(0.8rem, 0.6vh, 3rem);
-  margin: 0 4px;
-  border-radius: 4px;
+  margin: 0 0.25rem;
+  border-radius: 0.25rem;
 }
 .barOne {
   animation: bar 1s linear 0.5s infinite;
@@ -292,44 +308,72 @@ body {
 }
 @keyframes bar {
   0% {
-    height: 10px;
+    height: 0.6rem;
   }
 
   50% {
     height: clamp(1rem, 3vh, 3rem);
   }
   100% {
-    height: 10px;
+    height: 0.6rem;
   }
 }
 
-/* Introduction  Component */
+/* Home  Component */
 
+.home-component {
+  height: 100vh;
+}
 .intro {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: clamp(150px, 12vw, 14vw);
-  margin-top: clamp(9rem, 20vh, 26rem);
+  white-space: nowrap;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .intro-text {
-  margin: 0 0 0 0;
+  margin: 0;
   color: var(--text-color-active);
-  font-size: clamp(3rem, 4.4vw, 7rem);
+  font-size: clamp(3rem, 4vmax, 5rem);
+}
+.first-letter {
+  position: relative;
+  color: rgb(0, 255, 255);
+}
+.first-letter::before {
+  font-weight: 900;
+  content: "V";
+  color: rgb(47, 30, 118);
+  position: absolute;
+  right: 2px;
+}
+.intro-info-div {
+  margin-top: clamp(3rem, 3vmax, 5rem);
+}
+.intro-info {
+  margin: 0;
+  color: var(--text-color-active);
+  font-size: clamp(2rem, 3vmax, 4rem);
 }
 .transparent-text {
   font-weight: 900;
   color: transparent;
-  background-image: url(../media/images/front-clip.png);
+  background-image: url(../media/images/front-clip1.webp);
   background-size: cover;
   background-clip: text;
-}
-.intro-info {
-  margin: 0 0 0 0;
-  color: var(--text-color-active);
-  font-size: clamp(2rem, 3.8vw, 7rem);
+  animation: textbg 4s linear infinite;
 }
 
-.intro-info-div {
-  margin-top: clamp(2rem, 2vh, 6rem);
+@keyframes textbg {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: top;
+  }
 }

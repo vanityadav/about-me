@@ -5,7 +5,7 @@ import github from "../media/images/github.svg";
 import linkedin from "../media/images/linkedin.svg";
 
 function NavBar() {
-  const items = ["About", "Contact", "Resume"];
+  const items = ["About", "My Skills", "Contact", "Resume"];
   const [id, setImageId] = useState(null);
 
   function changeId() {
@@ -19,10 +19,10 @@ function NavBar() {
         </div>
         {items.map((item) => (
           <div key={item} className="nav-item cursor">
-            <NavbarLink className="nav-item-text" to={`/${item}`}>
+            <NavbarLink className="text-item" to={`/${item}`}>
               {item}
             </NavbarLink>
-            <div className="nav-text-line"></div>
+            <div className="text-underline"></div>
           </div>
         ))}
         <div className="socials">
