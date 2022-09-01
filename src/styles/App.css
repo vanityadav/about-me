@@ -223,8 +223,8 @@ body {
   position: fixed;
   width: clamp(180px, 15vw, 280px);
   height: clamp(2rem, 6vh, 5rem);
-  top: clamp(6vh, 12vh, 12vh);
-  right: 8vw;
+  top: clamp(2rem, 11vh, 7rem);
+  right: clamp(6rem, 3vw, 7rem);
   border: none;
   border-radius: clamp(30px, 5vh, 70px);
   box-shadow: 0 0 2px var(--box-shadow), 0 0 2px var(--box-shadow);
