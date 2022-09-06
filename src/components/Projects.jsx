@@ -1,14 +1,19 @@
 import React, { Component } from "react";
+import Project from "./Project";
 
 function Projects() {
   return (
     <>
-      <h1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius unde
-        incidunt fugit cupiditate inventore ipsum. Ea inventore a quis incidunt
-        molestias ut numquam porro iusto, ab illum sunt, doloribus
-        necessitatibus!
-      </h1>
+      <div className="projects-page">
+        <div className="section-title">
+          <h1>
+            My Projects<div className="center-line"></div>
+          </h1>
+          <p>Some Things I’ve Built</p>
+        </div>
+        <Project />
+        <div></div>
+      </div>
     </>
   );
 }
