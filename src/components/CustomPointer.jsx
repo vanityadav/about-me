@@ -19,17 +19,20 @@ function CustomPointer() {
       cursorRef.current.style.left = x - 8 + "px";
       cursorRef.current.style.top = y - 8 + "px";
       cursorRef.current.style.opacity = 1;
-      cursorRef.current.style.boxShadow = "0 0 10px 4px #00d5ff";
     }
 
     function isHoverTrue() {
-      cursorRef.current.style.boxShadow = "0 0 10px 10px #00d5ff";
-      cursorRef.current.style.opacity = "0.2";
-      cursorRef.current.style.backgroundColor = "#00D5FF";
+      cursorRef.current.style.height = "3vh";
+      cursorRef.current.style.width = "3vh";
+      cursorRef.current.style.borderRadius = "50%";
+      cursorRef.current.style.backgroundColor = "rgba(255,255,255, 0.6)";
+      cursorRef.current.style.boxShadow = "0 0 10px 10px rgb(0, 213, 255, 0.4)";
     }
 
     function isHoverFalse() {
-      cursorRef.current.style.opacity = "1";
+      cursorRef.current.style.height = "2vh";
+      cursorRef.current.style.width = "2vh";
+      cursorRef.current.style.boxShadow = "0 0 10px 4px #00d5ff";
       cursorRef.current.style.backgroundColor = "white";
     }
     return () => {

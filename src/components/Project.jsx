@@ -19,9 +19,9 @@ function Project() {
     {
       id: 1,
       img: mytodo,
-      techUsed: "HTML CSS JS  ReactJS",
-      title: "Fun Translator",
-      info: "This was made as a part of huge project",
+      techUsed: "HTML CSS JS ReactJSdf s sa dsa sa ",
+      title: "Minion Translator",
+      info: "A fun translator made using  df dsd gsdg sgsd gsdg sdg s",
       url: "/helloUrl",
       gitUrl: "/gitUrl",
     },
@@ -35,9 +35,9 @@ function Project() {
               <div className="project-design">
                 <div className="project-top">
                   <div>
-                    <Link className="text-item" to={project.url}>
+                    <Link className="text-item imgHover" to={project.url}>
                       <img
-                        className="project-image"
+                        className="project-image cursor"
                         src={project.img}
                         alt=""
                       ></img>
@@ -62,7 +62,7 @@ function Project() {
                     </NavbarLink>
                     <NavbarLink className="text-item" to={project.gitUrl}>
                       <img
-                        className="cursor links"
+                        className="cursor links github"
                         src={github}
                         alt="Github"
                       ></img>

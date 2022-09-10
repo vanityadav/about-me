@@ -56,7 +56,7 @@
   --navbar-border-color: #5e5e5e;
   --text-color: #a5a5a5;
   --text-color-active: white;
-  --body-background-color: #11101b;
+  --body-background-color: hsl(245, 26%, 8%);
   --box-shadow: #00d5ff;
   --social-logo-color: 80%;
   --theme: white;
@@ -68,11 +68,17 @@
   --border-box-color: hsla(245, 100%, 70%, 0.16);
   --box-shadow-inset: hsl(245, 26%, 4%);
   --box-shadow-n: hsl(245, 10%, 4%);
+  --text-shadow: -15px -15px 30px var(--box-shadow-inset),
+    15px 15px 30px var(--box-shadow-n);
+  --project-title-box: hsl(245, 26%, 4%);
+  --project-title-box-shadow1: hsl(0, 0%, 0%);
+  --project-title-box-shadow2: hsla(244, 30%, 100%, 0.48);
+  --github-filter: 100%;
 }
 #light {
   --navbar-background-color: #ffffff;
   --navbar-border-color: #a2a2a2;
-  --text-color: #8a8a8a;
+  --text-color: #646464;
   --text-color-active: rgb(0, 0, 0);
   --body-background-color: #e7ebf0;
   --box-shadow: #00d5ff;
@@ -88,6 +94,10 @@
   --box-shadow-n: rgb(166, 171, 189);
   --text-shadow: -15px -15px 30px var(--box-shadow-inset),
     15px 15px 30px var(--box-shadow-n);
+  --project-title-box: hsl(210, 56%, 93%);
+  --project-title-box-shadow1: hsl(0, 0%, 100%);
+  --project-title-box-shadow2: hsla(208, 30%, 64%, 0.48);
+  --github-filter: 0%;
 }
 .pointer-true {
   cursor: none;
@@ -127,11 +137,12 @@ body {
   width: 2vh;
   background-color: var(--pointer-color);
   border-radius: 50%;
-  box-shadow: 0 0 0.7rem 0.25rem var(--box-shadow);
   opacity: 0;
+  box-shadow: 0 0 10px 4px rgb(0, 213, 255);
   transform: scale(100%);
   transition: opacity ease-in-out 0.3s, transform ease-in 0.3s,
-    box-shadow ease-in-out 1s;
+    box-shadow ease-in-out 1s, width cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s,
+    height cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
   z-index: 99999;
   pointer-events: none;
 }
@@ -579,7 +590,7 @@ div [class*="project-"] {
   align-items: center;
   flex-wrap: wrap;
   margin-top: 2em;
-  font-size: clamp(0.6rem, 1.2vmax, 2rem);
+  font-size: clamp(0.8rem, 1.2vmax, 2rem);
 }
 .project-box {
   display: flex;
@@ -622,6 +633,7 @@ div [class*="project-"] {
   flex-direction: column;
 }
 .project-top {
+  height: clamp(7rem, 16vmin, 12rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -629,6 +641,7 @@ div [class*="project-"] {
 }
 
 .project-image {
+  position: relative;
   height: clamp(7rem, 16vmin, 12rem);
   border-radius: 0.5em;
   margin-left: -4em;
@@ -644,12 +657,24 @@ div [class*="project-"] {
   box-shadow: -15px -15px 30px var(--box-shadow-inset),
     15px 15px 30px var(--box-shadow-n);
 }
+.project-image:hover {
+  background: linear-gradient(
+      317.7deg,
+      var(--background-gradient1),
+      var(--background-gradient2)
+    ),
+    var(--background-gradient);
+  background-blend-mode: soft-light, normal;
+  border: 10px solid var(--border-box-color);
+  box-shadow: -20px -20px 50px var(--box-shadow-inset),
+    20px 20px 50px var(--box-shadow-n);
+}
 
 .project-tech-used {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   font-size: clamp(0.5rem, 1vmax, 1rem);
-  margin: 2em 0 2em 2em;
+  margin: 0 0 0 1em;
 }
 
 .project-info-all {
@@ -662,16 +687,37 @@ div [class*="project-"] {
   font-weight: 800;
   padding: 0.25em;
   border-radius: 1em;
-  background: hsl(210, 56%, 93%);
-  box-shadow: inset -1.3px -1.3px 2.8px hsl(0, 0%, 100%),
-    inset 1.3px 1.3px 2.8px hsla(208, 30%, 64%, 0.48);
+  background: var(--project-title-box);
+  box-shadow: inset -1.3px -1.3px 2.8px var(--project-title-box-shadow1),
+    inset 1.3px 1.3px 2.8px var(--project-title-box-shadow2);
   border-radius: 9px;
-  border: 2px solid hsl(210, 56%, 93%);
+  border: 2px solid var(--project-title-box);
 }
 .project-info {
-  font-size: clamp(0.5rem, 1vmax, 1rem);
+  font-size: clamp(0.6rem, 1vmax, 1rem);
 }
 .links {
   height: 1.25em;
   margin: 1em 1em 0 0;
+  transition: transform ease-in 0s;
+}
+.links:hover {
+  transform: scale(120%);
+}
+.github {
+  filter: invert(var(--github-filter));
+}
+
+/*       Contact Page             */
+
+.contact-page {
+  height: 100vh;
+}
+
+.contact-form {
+}
+
+.map-container {
+  height: 50vh;
+  width: 40vw;
 }

@@ -1,23 +1,24 @@
-import StaticComponents from "./components/StaticComponents";
-import CustomPointer from "./components/CustomPointer";
-import React, { useState, useEffect } from "react";
+import "./styles/App.css";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
-import "./styles/App.css";
-import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Scroll from "./components/Scroll";
+import Projects from "./components/Projects";
 import { Route, Routes } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import CustomPointer from "./components/CustomPointer";
+import StaticComponents from "./components/StaticComponents";
+import Contact from "./components/Contact";
 
 function App() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("");
   const [customCursor, setCursor] = useState(true);
 
   useEffect(() => {
     let userTheme = window.localStorage.getItem("theme");
     let userCursor = window.localStorage.getItem("customCursor");
-    setTheme(userTheme ? userTheme : "dark");
-    setCursor(JSON.parse(userCursor));
+    setTheme(userTheme ? userTheme : "light");
+    setCursor(JSON.parse(userCursor) ? JSON.parse(userCursor) : true);
   }, []);
 
   useEffect(() => {
@@ -49,6 +50,7 @@ function App() {
             <Home />
             <Skills />
             <Projects />
+            <Contact />
             {/* <Routes >
               <Route path=""   element={}>     </Route>
             </Routes> */}
