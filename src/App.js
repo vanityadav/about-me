@@ -4,11 +4,12 @@ import NavBar from "./components/NavBar";
 import Skills from "./components/Skills";
 import Scroll from "./components/Scroll";
 import Projects from "./components/Projects";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import CustomPointer from "./components/CustomPointer";
 import StaticComponents from "./components/StaticComponents";
 import Contact from "./components/Contact";
+import Submit from "./components/Submit";
 
 function App() {
   const [theme, setTheme] = useState("");
@@ -46,14 +47,16 @@ function App() {
             handlePointer={handlePointer}
           />
           <NavBar />
+
           <div className="site-content">
+            <Link to="/submit">Submit</Link>
+            <Routes>
+              <Route path="/submit" element={<Submit />} />
+            </Routes>
             <Home />
             <Skills />
             <Projects />
             <Contact />
-            {/* <Routes >
-              <Route path=""   element={}>     </Route>
-            </Routes> */}
           </div>
         </div>
       </div>
