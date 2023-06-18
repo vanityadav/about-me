@@ -1,9 +1,9 @@
 <script>
 	import '../app.css';
+	import Footer from '../lib/footer/Footer.svelte';
 	import Header from '../lib/header/Header.svelte';
 </script>
 
-<div class="w-desktopWidth m-auto">
-	<Header />
-	<slot />
-</div>
+<Header />
+<slot />
+<Footer />

@@ -1,0 +1,4 @@
+<div>
+	&nearr;
+	<slot />
+</div>
