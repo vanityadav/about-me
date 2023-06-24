@@ -31,8 +31,8 @@
 			<button on:click={() => (mobileMenu = !mobileMenu)}>Menu</button>
 		</nav>
 		{#if mobileMenu}
-			<!-- transition:slide={{ duration: 400 }} -->
 			<div
+				transition:slide={{ duration: 400 }}
 				class="absolute bottom-[49px] flex flex-col gap-2 bg-white/40 backdrop-blur-lg left-0 right-0 rounded-t-2xl"
 				class:border-t={mobileMenu}
 			>
