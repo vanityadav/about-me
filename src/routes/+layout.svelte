@@ -4,7 +4,6 @@
 </script>
 
 <svelte:head>
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
 	<title>Vanit Yadav</title>
 	<meta
 		name="keywords"
@@ -12,7 +11,6 @@
 	/>
 	<meta name="author" content="Vanit Yadav" />
 </svelte:head>
-
 <Header />
 <main>
 	<slot />

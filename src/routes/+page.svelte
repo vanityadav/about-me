@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Social from '$lib/home/Social.svelte';
+	import Social from '../lib/home/Social.svelte';
 </script>
 
 <div class="w-desktopWidth m-auto my-8 mt-16 text-left max-w-siteWidth">
