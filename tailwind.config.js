@@ -4,8 +4,12 @@ export default {
 	darkMode: 'media',
 	theme: {
 		extend: {
+			maxWidth: { siteWidth: '900px' },
 			width: {
-				desktopWidth: '70%'
+				desktopWidth: '90%'
+			},
+			colors: {
+				primary: '#f35815'
 			}
 		}
 	},
