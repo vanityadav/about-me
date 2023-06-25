@@ -1,9 +1,7 @@
 import { fail } from '@sveltejs/kit';
 import type { Actions } from './$types';
-import { PrismaClient } from '@prisma/client';
 import { contactFormSchema } from './formValidation';
-
-const prisma = new PrismaClient();
+import prisma from '$lib/server/prisma/PrismaClient';
 
 export const actions = {
 	default: async ({ request }) => {
