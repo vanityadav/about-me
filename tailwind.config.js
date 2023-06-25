@@ -15,7 +15,7 @@ export default {
 				shadowTopLg: '0 -.5em 1em  rgba(0,0,0,0.1)',
 				shadowTopMd: '0 -6px 12px  rgba(0,0,0,0.1)',
 				shadowTopSm: '0 -4px 8px  rgba(0,0,0,0.05)',
-				shadowMd: '0 0 1em .25em  rgba(0,0,0,0.1)'
+				mobileMenu: '0 0 1em .5em  rgba(0,0,0,0.15)'
 			}
 		}
 	},

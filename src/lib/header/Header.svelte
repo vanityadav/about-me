@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Link from '../link/Link.svelte';
+	import { quintInOut } from 'svelte/easing';
 	import { fade, fly, slide } from 'svelte/transition';
 	import PrimaryButton from '../buttons/PrimaryButton.svelte';
 
@@ -38,9 +39,9 @@
 	</div>
 	{#if mobileNav}
 		<div
-			class="sm:hidden fixed bottom-4 bg-white/80 backdrop-blur-lg border-t left-0 right-0 z-50 shadow-shadowMd w-desktopWidth m-auto rounded-xl py-2"
+			class="sm:hidden fixed bottom-4 bg-white/80 backdrop-blur-lg left-0 right-0 z-50 shadow-mobileMenu border w-desktopWidth m-auto rounded-xl py-2"
 			class:rounded-2xl={mobileMenu}
-			transition:fly
+			transition:fly={{ y: 40, easing: quintInOut }}
 		>
 			{#if mobileMenu}
 				<nav
