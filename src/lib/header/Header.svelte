@@ -1,13 +1,25 @@
 <script lang="ts">
 	import Link from '../link/Link.svelte';
-	import { fade, slide } from 'svelte/transition';
+	import { fade, fly, slide } from 'svelte/transition';
 	import PrimaryButton from '../buttons/PrimaryButton.svelte';
 
 	let showBorder = false;
 	let mobileMenu = false;
+	let oldScroll: number = 0;
+	let mobileNav = true;
+
+	const handleScroll = () => {
+		showBorder = true;
+		if (oldScroll < window.scrollY) {
+			mobileNav = false;
+		} else {
+			mobileNav = true;
+		}
+		oldScroll = window.scrollY;
+	};
 </script>
 
-<svelte:window on:scroll|once={() => (showBorder = true)} />
+<svelte:window on:scroll={() => handleScroll()} />
 
 <header>
 	<div
@@ -24,30 +36,33 @@
 			<PrimaryButton href="/contact">Contact</PrimaryButton>
 		</nav>
 	</div>
-
-	<div
-		class="sm:hidden fixed bottom-0 bg-white/80 backdrop-blur-lg border-t left-0 right-0 z-50 shadow-shadowTopMd"
-		class:rounded-t-2xl={mobileMenu}
-	>
-		{#if mobileMenu}
-			<nav
-				transition:slide={{ duration: 400 }}
-				class="flex flex-col gap-2 py-4 justify-between w-desktopWidth m-auto"
-			>
-				<Link href="/about">About</Link>
-				<Link href="/blogs">Blogs</Link>
-				<Link href="/projects">Projects</Link>
-				<Link href="/contact">Contact</Link>
-			</nav>
-		{/if}
-		<nav
-			class="flex items-center justify-between w-desktopWidth m-auto py-2"
-			class:border-t={mobileMenu}
+	{#if mobileNav}
+		<div
+			class="sm:hidden fixed bottom-4 bg-white/80 backdrop-blur-lg border-t left-0 right-0 z-50 shadow-shadowMd w-desktopWidth m-auto rounded-xl py-2"
+			class:rounded-2xl={mobileMenu}
+			transition:fly
 		>
-			<Link href="/">Vanit.</Link>
-			<button on:click={() => (mobileMenu = !mobileMenu)}>Menu</button>
-		</nav>
-	</div>
+			{#if mobileMenu}
+				<nav
+					transition:slide={{ duration: 400 }}
+					class="flex flex-col gap-2 py-4 justify-between w-desktopWidth m-auto"
+				>
+					<Link onClick={() => (mobileMenu = false)} href="/about">About</Link>
+					<Link onClick={() => (mobileMenu = false)} href="/blogs">Blogs</Link>
+					<Link onClick={() => (mobileMenu = false)} href="/projects">Projects</Link>
+					<Link onClick={() => (mobileMenu = false)} href="/contact">Contact</Link>
+				</nav>
+			{/if}
+			<nav
+				class="flex items-center justify-between w-desktopWidth m-auto py-2"
+				class:border-t={mobileMenu}
+			>
+				<Link href="/" onClick={() => (mobileMenu = false)}>Vanit.</Link>
+				<button on:click={() => (mobileMenu = !mobileMenu)}>Menu</button>
+			</nav>
+		</div>
+	{/if}
+
 	{#if mobileMenu}
 		<div
 			role="none"

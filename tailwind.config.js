@@ -14,7 +14,8 @@ export default {
 			boxShadow: {
 				shadowTopLg: '0 -.5em 1em  rgba(0,0,0,0.1)',
 				shadowTopMd: '0 -6px 12px  rgba(0,0,0,0.1)',
-				shadowTopSm: '0 -4px 8px  rgba(0,0,0,0.05)'
+				shadowTopSm: '0 -4px 8px  rgba(0,0,0,0.05)',
+				shadowMd: '0 0 1em .25em  rgba(0,0,0,0.1)'
 			}
 		}
 	},
