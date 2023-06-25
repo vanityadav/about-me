@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import ContextBox from '$lib/content/ContextBox.svelte';
 
 	export let form: any;
 	$: errors = form?.errors ? JSON.parse(form?.errors) : null;
@@ -15,6 +14,7 @@
 	use:enhance={() => {
 		submitting = true;
 		submitError = false;
+		submitted = false;
 
 		return async ({ update, result }) => {
 			await update({ reset: true });
