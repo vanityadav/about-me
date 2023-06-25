@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	::-webkit-scrollbar {
+		width: 2px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #c3c3c3;
+	}
+}
