@@ -15,7 +15,8 @@
 		content="Welcome to the professional portfolio of Vanit Yadav, a skilled front-end developer and team leader. With expertise in React, Next.js, Sevelt, Tailwind CSS and more. I create visually stunning and responsive web applications. Explore my work and projects to see how I bring innovative designs to life. Contact me to collaborate on your next web development venture."
 	/>
 </svelte:head>
+
 <Header />
-<main>
+<main class="w-desktopWidth m-auto my-8 mt-16 max-w-siteWidth">
 	<slot />
 </main>
