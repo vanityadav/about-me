@@ -50,8 +50,10 @@
 	</div>
 	{#if mobileMenu}
 		<div
+			role="none"
 			class="sm:hidden fixed inset-0 z-40 bg-white/10 backdrop-blur-sm"
 			transition:fade={{ duration: 200 }}
+			on:click={() => (mobileMenu = false)}
 		/>
 	{/if}
 </header>
