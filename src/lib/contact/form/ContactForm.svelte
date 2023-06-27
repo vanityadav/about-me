@@ -7,30 +7,27 @@
 	let submitting = false;
 	let submitError = false;
 	let submitted = false;
-</script>
 
-<form
-	method="POST"
-	use:enhance={() => {
+	const enhanceForm = () => {
 		submitting = true;
 		submitError = false;
 		submitted = false;
-
-		return async ({ update, result }) => {
+		return async ({ update, result }: { result: any; update: any }) => {
 			await update({ reset: true });
 			if (result.type === 'failure') submitError = true;
 			else submitted = true;
 			submitting = false;
 		};
-	}}
-	class="flex flex-col gap-4 py-4 items-center"
->
+	};
+</script>
+
+<form method="POST" use:enhance={enhanceForm} class="flex flex-col gap-4 py-4 items-center">
 	<div class="w-full">
 		<input
 			type="text"
 			name="name"
 			placeholder="Name"
-			class="border p-2 rounded w-full outline-transparent focus:outline-blue-400"
+			class="border border-gray-400 p-2 rounded w-full outline-transparent focus:outline-blue-400"
 			class:border-red-400={errors?.name}
 		/>
 		{#if errors?.name}
@@ -43,7 +40,7 @@
 			type="email"
 			name="email"
 			placeholder="Email"
-			class="border p-2 rounded w-full outline-transparent focus:outline-blue-400"
+			class="border border-gray-400 p-2 rounded w-full outline-transparent focus:outline-blue-400"
 			class:border-red-400={errors?.email}
 		/>
 		{#if errors?.email}
@@ -56,7 +53,7 @@
 			type="text"
 			name="subject"
 			placeholder="Subject"
-			class="border p-2 rounded w-full outline-transparent focus:outline-blue-400"
+			class="border border-gray-400 p-2 rounded w-full outline-transparent focus:outline-blue-400"
 			class:border-red-400={errors?.subject}
 		/>
 		{#if errors?.subject}
@@ -69,7 +66,7 @@
 			rows="5"
 			name="message"
 			placeholder="Message"
-			class="border p-2 rounded w-full outline-transparent focus:outline-blue-400"
+			class="border border-gray-400 p-2 rounded w-full outline-transparent focus:outline-blue-400"
 			class:border-red-400={errors?.message}
 		/>
 		{#if errors?.message}
@@ -85,7 +82,7 @@
 	<button
 		type="submit"
 		value="Send"
-		class="border w-fit px-4 py-2 rounded text-white bg-black/80"
+		class="border border-gray-400 w-fit px-4 py-2 rounded text-white bg-black/80"
 		disabled={submitting}
 	>
 		{submitted

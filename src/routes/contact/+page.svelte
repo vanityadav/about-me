@@ -31,7 +31,7 @@
 			, and I'm here to make your online presence shine! Reach out today and let's make magic happen.
 		</ContextBox>
 	</div>
-	<div class="flex-1 my-4">
+	<div class="flex-1 p-4 rounded-xl shadow">
 		<h2 class="text-left text-lg">I'm just a message away!</h2>
 
 		<ContactForm {form} />
