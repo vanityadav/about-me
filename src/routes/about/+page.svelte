@@ -3,7 +3,7 @@
 	import Heading from '$lib/content/Heading.svelte';
 </script>
 
-<div class="flex gap-4">
+<div class="flex gap-4 max-sm:flex-col">
 	<div class="flex flex-col gap-8 flex-1">
 		<div class="flex flex-col gap-2">
 			<Heading>Vanit Yadav</Heading>
