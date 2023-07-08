@@ -24,15 +24,15 @@
 
 <header>
 	<div
-		class=" max-sm:hidden py-2 sticky top-0 bg-white/80 backdrop-blur-lg"
-		class:border-b={showBorder}
+		class=" max-sm:hidden fixed bottom-4 bg-white/80 backdrop-blur-lg left-0 right-0 z-50 shadow-mobileMenu border w-desktopWidth max-w-siteWidth m-auto rounded-xl py-4"
 	>
 		<nav class="w-desktopWidth m-auto flex items-center justify-between gap-8 max-w-siteWidth">
-			<Link href="/">Vanit.</Link>
+			<Link href="/">V / Y</Link>
+
 			<div class="flex gap-2 items-center">
-				<Link href="/about">About</Link>
-				<Link href="/blogs">Blogs</Link>
-				<Link href="/projects">Projects</Link>
+				<Link href="/about">about</Link>
+				<Link href="/blogs">blogs</Link>
+				<Link href="/projects">projects</Link>
 			</div>
 			<PrimaryButton href="/contact">Contact</PrimaryButton>
 		</nav>
@@ -48,17 +48,17 @@
 					transition:slide={{ duration: 400 }}
 					class="flex flex-col gap-2 py-4 justify-between w-desktopWidth m-auto"
 				>
-					<Link onClick={() => (mobileMenu = false)} href="/about">About</Link>
-					<Link onClick={() => (mobileMenu = false)} href="/blogs">Blogs</Link>
-					<Link onClick={() => (mobileMenu = false)} href="/projects">Projects</Link>
-					<Link onClick={() => (mobileMenu = false)} href="/contact">Contact</Link>
+					<Link onClick={() => (mobileMenu = false)} href="/about">about</Link>
+					<Link onClick={() => (mobileMenu = false)} href="/blogs">blogs</Link>
+					<Link onClick={() => (mobileMenu = false)} href="/projects">projects</Link>
+					<Link onClick={() => (mobileMenu = false)} href="/contact">contact</Link>
 				</nav>
 			{/if}
 			<nav
 				class="flex items-center justify-between w-desktopWidth m-auto py-2"
 				class:border-t={mobileMenu}
 			>
-				<Link href="/" onClick={() => (mobileMenu = false)}>Vanit.</Link>
+				<Link href="/" onClick={() => (mobileMenu = false)}>V / Y</Link>
 				<button on:click={() => (mobileMenu = !mobileMenu)}>Menu</button>
 			</nav>
 		</div>

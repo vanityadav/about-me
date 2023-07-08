@@ -9,7 +9,7 @@
 
 <Heading>Get in Touch with ME!</Heading>
 <div class="flex gap-8 max-lg:flex-col">
-	<div class="flex-[2]">
+	<div class="flex-1">
 		<ContextBox width="full">
 			Unleash the power of your digital dreams! I'm a <b> freelance web developer </b>
 			specializing in captivating online experiences. With cutting-edge technology, I bring
