@@ -4,22 +4,23 @@
 </script>
 
 <div class="flex gap-4 max-sm:flex-col">
-	<div class="flex flex-col gap-8 flex-1">
+	<section class="flex flex-col gap-8 flex-1">
 		<div class="flex flex-col gap-2">
 			<Heading>Vanit Yadav</Heading>
-			<h2 class="text-2xl">Software Engineer at IJRDO</h2>
-			<ContextBox width="full">
-				I specialize in developing web-based products and digital experiences that prioritize
-				accessibility and inclusivity for all users.
-			</ContextBox>
+			<h2 class="text-xl text-gray-700">Software Engineer</h2>
+			<div class="flex gap-2 flex-wrap my-2 text-gray-500 text-xs">
+				<span class=" px-2 py-1 border rounded-full"> MERN </span>
+				<span class=" px-2 py-1 border rounded-full"> Gurgaon </span>
+			</div>
 		</div>
 		<nav class="flex flex-col gap-1 cursor-pointer">
-			<p class="hover:underline">About</p>
-			<p class="hover:underline">EXPERIENCE</p>
+			<p class="hover:underline">Introduction</p>
+			<p class="hover:underline">Experience</p>
 			<p class="hover:underline">Skills</p>
+			<p class="hover:underline">Education</p>
 		</nav>
-	</div>
-	<div class="flex-[2]">
+	</section>
+	<section class="flex-[2]">
 		<ContextBox width="full">
 			My name is Vanit Yadav, and I am a web developer with approximately one year of experience in
 			the field of web development. Hailing from India, I possess a deep passion for frontend web
@@ -39,5 +40,5 @@
 			innovation, I strive to deliver accessible and inclusive products that meet the needs of
 			diverse users.
 		</ContextBox>
-	</div>
+	</section>
 </div>

@@ -17,6 +17,6 @@
 </svelte:head>
 
 <Header />
-<main class="w-desktopWidth m-auto my-8 mt-16 max-w-siteWidth mb-32">
+<main class="w-siteWidth m-auto mt-16 max-w-siteWidth mb-32">
 	<slot />
 </main>

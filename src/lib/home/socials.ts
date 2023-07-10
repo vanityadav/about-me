@@ -12,8 +12,8 @@ const socials = [
 				</svg>`
 	},
 	{
-		label: 'Reach me by email',
-		href: 'mailto:vanityadav08@gmail.com',
+		label: 'E-mail',
+		href: "mailto:vanityadav08@gmail.com?subject=Let's chat about my website&body=Hi Vanit,%0A %0AI would like you to ....",
 		icon: `<svg height="24" width="24" viewBox="0 0 512 512">
 			<path
 				d="m298.789 313.693c-12.738 8.492-27.534 12.981-42.789 12.981-15.254 0-30.05-4.489-42.788-12.981l-209.803-139.873c-1.164-.776-2.298-1.585-3.409-2.417v229.197c0 26.278 21.325 47.133 47.133 47.133h417.733c26.278 0 47.133-21.325 47.133-47.133v-229.198c-1.113.834-2.249 1.645-3.416 2.422z"

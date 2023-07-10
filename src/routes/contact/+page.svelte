@@ -8,7 +8,7 @@
 </script>
 
 <Heading>Get in Touch with ME!</Heading>
-<div class="flex gap-8 max-lg:flex-col">
+<div class="flex gap-8 max-lg:flex-col mt-4">
 	<div class="flex-1">
 		<ContextBox width="full">
 			Unleash the power of your digital dreams! I'm a <b> freelance web developer </b>
@@ -31,9 +31,8 @@
 			, and I'm here to make your online presence shine! Reach out today and let's make magic happen.
 		</ContextBox>
 	</div>
-	<div class="flex-1 p-4 rounded-xl shadow">
+	<div class="flex-1 p-4 rounded-xl border flex flex-col justify-center">
 		<h2 class="text-left text-lg">I'm just a message away!</h2>
-
 		<ContactForm {form} />
 	</div>
 </div>

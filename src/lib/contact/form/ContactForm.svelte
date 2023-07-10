@@ -91,6 +91,6 @@
 			? 'Setting Connection 🌏'
 			: submitError
 			? 'Yikes!😬 Retry '
-			: "Let's Talk ☎ "}
+			: "Let's Connect 🔗 "}
 	</button>
 </form>
