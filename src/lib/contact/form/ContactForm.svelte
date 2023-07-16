@@ -2,6 +2,7 @@
 	import { enhance } from '$app/forms';
 
 	export let form: any;
+
 	$: errors = form?.errors ? JSON.parse(form?.errors) : null;
 
 	let submitting = false;
@@ -82,7 +83,7 @@
 	<button
 		type="submit"
 		value="Send"
-		class="border border-gray-400 w-fit px-4 py-2 rounded text-white bg-black/80"
+		class="border border-gray-400 w-fit px-4 py-2 rounded text-white bg-black/80 hover:bg-black transition-colors duration-300"
 		disabled={submitting}
 	>
 		{submitted
