@@ -8,7 +8,7 @@
 	<a
 		{href}
 		target="_blank"
-		class="p-4 flex items-center gap-6 border rounded-md flex-1 hover:bg-gray-50"
+		class="p-4 flex items-center gap-6 border rounded-md flex-1 justify-between hover:bg-hover"
 	>
 		<div class="flex items-center gap-4">
 			<slot />
@@ -22,7 +22,7 @@
 		</svg>
 	</a>
 {:else}
-	<a {href} target="_blank" class="p-2 flex items-center border rounded-md hover:bg-gray-50">
+	<a {href} target="_blank" class="p-2 flex items-center border rounded-md hover:bg-hover">
 		<slot />
 	</a>
 {/if}

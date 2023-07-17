@@ -2,7 +2,7 @@
 	import ContextBox from '$lib/content/ContextBox.svelte';
 </script>
 
-<section id="education" class="h-screen scroll-mt-16">
+<section id="education" class="h-screen scroll-mt-64">
 	<ContextBox width="full">
 		My name is Vanit Yadav, and I am a web developer with approximately one year of experience in
 		the field of web development. Hailing from India, I possess a deep passion for frontend web

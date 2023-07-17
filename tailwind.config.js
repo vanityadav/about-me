@@ -9,7 +9,11 @@ export default {
 				siteWidth: '90%'
 			},
 			colors: {
-				primary: '#f35815'
+				// primary: '#f35815',
+				hover: '#f7f7f9',
+				active: '#e9e9eb',
+				primary: '#3898ec',
+				secondary: '#0078ff'
 			},
 			boxShadow: {
 				shadowTopLg: '0 -.5em 1em  rgba(0,0,0,0.1)',

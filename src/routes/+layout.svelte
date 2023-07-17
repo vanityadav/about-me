@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import Header from '../lib/header/Header.svelte';
+	error;
 </script>
 
 <svelte:head>
@@ -18,5 +19,6 @@
 
 <Header />
 <main class="w-siteWidth m-auto mt-16 max-w-siteWidth mb-32">
+	<div class="fixed inset-0 bg-white h-16" />
 	<slot />
 </main>
