@@ -35,6 +35,8 @@
 	"type": "module",
 	"dependencies": {
 		"@prisma/client": "^4.16.1",
+		"@xstate/svelte": "^2.1.0",
+		"xstate": "^4.38.1",
 		"zod": "^3.21.4"
 	}
 }
