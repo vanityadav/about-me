@@ -8,6 +8,15 @@ export default {
 			width: {
 				siteWidth: '90%'
 			},
+			animation: {
+				dockIconAni: 'dockIconAni 0.4s ease forwards'
+			},
+			keyframes: {
+				dockIconAni: {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-20px)' }
+				}
+			},
 			colors: {
 				// primary: '#f35815',
 				hover: '#f7f7f9',

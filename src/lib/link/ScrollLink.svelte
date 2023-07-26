@@ -1,10 +1,10 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+
 	export let href: string;
 	export let label: string;
 
-	import { page } from '$app/stores';
-
-	$: active = $page.url.href.endsWith(href);
+	$: active = $page.url.hash === href;
 </script>
 
 <a
