@@ -3,8 +3,7 @@
 	import Heading from '$lib/content/Heading.svelte';
 	import ContextBox from '$lib/content/ContextBox.svelte';
 	import ContactForm from '$lib/contact/form/ContactForm.svelte';
-
-	export let form: ActionData;
+	import { Messenger, messengerService } from '$lib/contact';
 </script>
 
 <Heading>Get in Touch with ME!</Heading>
@@ -31,8 +30,9 @@
 			, and I'm here to make your online presence shine! Reach out today and let's make magic happen.
 		</ContextBox>
 	</div>
-	<div class="flex-1 p-4 rounded-xl border flex flex-col justify-center">
-		<h2 class="text-left text-lg">I'm just a message away!</h2>
-		<ContactForm {form} />
-	</div>
+	<!-- <div class="flex-1 p-4 rounded-xl border flex flex-col justify-center"> -->
+	<!-- <h2 class="text-left text-lg">I'm just a message away!</h2> -->
+	<!-- <ContactForm {form} /> -->
+	<Messenger />
+	<!-- </div> -->
 </div>
