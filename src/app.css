@@ -3,15 +3,39 @@
 @tailwind utilities;
 
 @layer base {
-	html {
+	body {
 		scroll-behavior: smooth;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		background-color: rgb(var(--background));
 	}
 	::-webkit-scrollbar {
 		/* width: 8px; */
-		display: none;
+		/* display: none; */
 	}
 
 	::-webkit-scrollbar-thumb {
-		background: #c3c3c3;
+		/* background: #c3c3c3; */
+	}
+
+	:root {
+		--primary-border: 229, 229, 229;
+		--background: 255, 255, 255;
+		--heading: 17, 17, 17;
+		--content: 85, 85, 85;
+		--caption: 153, 153, 153;
+		--wash1: 229, 229, 229;
+		--wash2: 242, 242, 242;
+	}
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--primary-border: 51, 51, 51;
+			--background: 34, 34, 34;
+			--heading: 238, 238, 238;
+			--content: 187, 187, 187;
+			--caption: 136, 136, 136;
+			--wash1: 78, 78, 78;
+			--wash2: 56, 56, 56;
+		}
 	}
 }

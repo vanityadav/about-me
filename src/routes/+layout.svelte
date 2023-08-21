@@ -15,6 +15,6 @@
 	/>
 </svelte:head>
 
-<main class="w-siteWidth m-auto my-16 max-w-siteWidth">
+<main class="m-auto my-16 w-[90%] max-w-[540px] text-sm leading-relaxed text-content">
 	<slot />
 </main>

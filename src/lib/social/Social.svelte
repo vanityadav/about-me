@@ -4,10 +4,8 @@
 	export let type: 'icons' | 'default' = 'default';
 </script>
 
-<div class="flex gap-4 flex-wrap">
+<div class="flex flex-wrap" class:gap-2={type === 'icons'} class:gap-4={type === 'default'}>
 	{#each socials as { href, label, icon }}
-		<SocialButton {label} {href} {type}>
-			{@html icon}
-		</SocialButton>
+		<SocialButton {label} {href} {type} {icon} />
 	{/each}
 </div>
