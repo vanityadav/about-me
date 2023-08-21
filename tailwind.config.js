@@ -4,7 +4,7 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
-			maxWidth: { siteWidth: '900px' },
+			maxWidth: { siteWidth: '576px' },
 			width: {
 				siteWidth: '90%'
 			},
