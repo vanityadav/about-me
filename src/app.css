@@ -1,17 +1,46 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+	--color-background: var(--background);
+	--color-heading: var(--heading);
+	--color-content: var(--content);
+	--color-caption: var(--caption);
+	--color-wash1: var(--wash1);
+	--color-wash2: var(--wash2);
+	--color-border: var(--primary-border);
+}
+
+:root {
+	--background: #ffffff;
+	--heading: #111111;
+	--content: #555555;
+	--caption: #999999;
+	--wash1: #e5e5e5;
+	--wash2: #f2f2f2;
+	--primary-border: #e5e5e5;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #222222;
+		--heading: #eeeeee;
+		--content: #bbbbbb;
+		--caption: #888888;
+		--wash1: #4e4e4e;
+		--wash2: #383838;
+		--primary-border: #333333;
+	}
+}
 
 @layer base {
-	html {
+	body {
 		scroll-behavior: smooth;
-	}
-	::-webkit-scrollbar {
-		/* width: 8px; */
-		display: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		background-color: var(--color-background);
 	}
 
-	::-webkit-scrollbar-thumb {
-		background: #c3c3c3;
+	::-webkit-scrollbar {
+		display: none;
 	}
 }
