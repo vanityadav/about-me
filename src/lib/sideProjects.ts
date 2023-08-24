@@ -10,7 +10,7 @@ const sideProjects = [
 		year: '2023',
 		title: 'Beats Music Web App',
 		description: '<p>Built a full scale music app using spotify api and sdk.</p>',
-		link: '',
+		link: 'https://beats.vanit.dev',
 		images: ['']
 	}
 ];
