@@ -1,34 +1,34 @@
 @import 'tailwindcss';
 
 @theme {
-	--color-background: var(--background);
-	--color-heading: var(--heading);
-	--color-content: var(--content);
-	--color-caption: var(--caption);
-	--color-wash1: var(--wash1);
-	--color-wash2: var(--wash2);
-	--color-border: var(--primary-border);
+	--color-background-default: var(--background-default);
+	--color-background-subtle: var(--background-subtle);
+	--color-background-faint: var(--background-faint);
+
+	--color-foreground-strong: var(--foreground-strong);
+	--color-foreground-default: var(--foreground-default);
+	--color-foreground-subtle: var(--foreground-subtle);
 }
 
 :root {
-	--background: #ffffff;
-	--heading: #111111;
-	--content: #555555;
-	--caption: #999999;
-	--wash1: #e5e5e5;
-	--wash2: #f2f2f2;
-	--primary-border: #e5e5e5;
+	--background-default: #ffffff;
+	--background-subtle: #f2f2f2;
+	--background-faint: #e5e5e5;
+
+	--foreground-strong: #111111;
+	--foreground-default: #555555;
+	--foreground-subtle: #999999;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--background: #222222;
-		--heading: #eeeeee;
-		--content: #bbbbbb;
-		--caption: #888888;
-		--wash1: #4e4e4e;
-		--wash2: #383838;
-		--primary-border: #333333;
+		--background-default: #222222;
+		--background-subtle: #383838;
+		--background-faint: #333333;
+
+		--foreground-strong: #eeeeee;
+		--foreground-default: #bbbbbb;
+		--foreground-subtle: #888888;
 	}
 }
 
@@ -37,10 +37,16 @@
 		scroll-behavior: smooth;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		background-color: var(--color-background);
+		background-color: var(--background-default);
 	}
 
 	::-webkit-scrollbar {
 		display: none;
+	}
+}
+
+@layer components {
+	.links {
+		@apply underline underline-offset-2;
 	}
 }

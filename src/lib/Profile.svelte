@@ -12,9 +12,9 @@
 		/>
 	</div>
 	<div class="flex flex-col">
-		<h1 class="text-xl text-heading">{AUTHOR.name}</h1>
+		<h1 class="text-xl text-foreground-strong">{AUTHOR.name}</h1>
 		<p>{AUTHOR.jobTitle}</p>
 		<p>{AUTHOR.employer} {AUTHOR.employerSuffix}</p>
-		<p class="text-xs text-caption">{AUTHOR.location.full}</p>
+		<p class="text-xs text-foreground-subtle">{AUTHOR.location.full}</p>
 	</div>
 </section>

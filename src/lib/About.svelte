@@ -1,24 +1,25 @@
 <script lang="ts">
-	import Social from './Social.svelte';
+	import LinkIcon from '../icons/LinkIcon.svelte';
 	import { RESUME_PATH } from './site';
 </script>
 
 <section class="flex flex-col gap-2">
-	<h2 class="text-heading font-semibold">About</h2>
 	<p class="mb-3">
-		I like design & code. I have a deep passion for
-		<b>frontend web development</b>
+		I like
+		<a class="links" href="/bio"> design & code. </a>
+
+		I have a deep passion for
+		<b>web development</b>
 		and love crafting fast, accessible interfaces, design systems, and micro-frontends with React, Next.js,
-		SvelteKit, Tailwind CSS, TypeScript, Node.js, and many
+		SvelteKit, Tailwind CSS, TypeScript, Node.js, Go, SQL, and many
 		<a
 			href={RESUME_PATH}
 			title="View Resume"
 			target="_blank"
 			rel="external noopener"
-			class="hover:underline hover:text-secondary"
+			class="links flex items-center gap-1 font-semibold"
 		>
-			<b>more &#x279A;</b>
+			more <LinkIcon classname="stroke-2 stroke-current size-2" />
 		</a>
 	</p>
-	<Social />
 </section>

@@ -86,6 +86,6 @@
 	{@html `<script type="application/ld+json">${JSON.stringify(personSchema).replace(/</g, '\\u003c')}\u003c/script>`}
 </svelte:head>
 
-<main class="m-auto my-16 w-[90%] max-w-lg text-sm leading-relaxed text-content">
+<main class="m-auto my-16 max-w-lg text-sm leading-relaxed text-foreground-default">
 	<slot />
 </main>
