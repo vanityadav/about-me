@@ -19,7 +19,7 @@ const socials = [
 		Icon: LinkedInIcon,
 	},
 	{
-		label: 'E-mail',
+		label: 'Email',
 		href: `mailto:${AUTHOR.email}?subject=${mailtoSubject}&body=${mailtoBody}`,
 		Icon: EmailIcon
 	}

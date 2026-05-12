@@ -10,6 +10,7 @@ export const AUTHOR = {
 	tagline: 'Senior Software Engineer & Frontend Architect',
 	employer: 'Radiansys',
 	employerSuffix: 'Inc.',
+	employerWebsite: 'https://www.radiansys.com/',
 	email: 'vanityadav08@gmail.com',
 	phone: '+91-8059271215',
 	location: {

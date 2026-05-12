@@ -8,6 +8,8 @@
 	--color-foreground-strong: var(--foreground-strong);
 	--color-foreground-default: var(--foreground-default);
 	--color-foreground-subtle: var(--foreground-subtle);
+
+	--breakpoint-xs: 20rem;
 }
 
 :root {
