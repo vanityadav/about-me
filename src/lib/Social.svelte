@@ -8,7 +8,9 @@
 	<p>
 		You can
 		<a class="links" href={resolve('/blogs')}> read my writing</a>
-		or code, or connect with me on LinkedIn. Reach out for a chat or a coffee.
+		or
+		<a class="links" href={resolve('/projects')}> code</a>, or connect with me on LinkedIn. Reach
+		out for a chat or a coffee.
 	</p>
 
 	<div class="flex flex-wrap gap-2">
